@@ -19,6 +19,31 @@ $ cd ../../..
 $ catkin_make
 ```
 
+Testing
+-------
+
+Try:
+```
+0$ roscore
+1$ roslaunch p3dx_gazebo_mod gazebo.launch 
+```
+to show the p3dx rover in a Willow Garage setting.
+
+For keyboard control, install:
+```
+$ cd <catkin_ws>/src
+$ git clone https://github.com/SD-Robot-Vision/p3dx_mover.git
+$ cd ..
+$ catkin_make
+```
+then run the 0$ and 1$ commands above in separate terminals and try:
+```
+2$ rosrun p3dx_mover mover.py 
+```
+then use the arrow keys to control the robot motion, 'q' to quit.
+
+Reference: http://wiki.lofarolabs.com/index.php/Moving_The_Pioneer_3-DX_In_Gazebo
+
 License
 =======
 
@@ -27,6 +52,20 @@ Original license is GPLv3, see LICENSE file in the repository.
 Modifications are Copyright (c) 2016, by California Institute of Technology, also under GPLv3.
 
 Modifications were performed by Catharine McGhan.
+
+Modifications include:
+-- updating README.md file
+-- changing the package names in all subdirectories to *_mod (for compatibility in case original branch is downloaded)
+-- removing .project and meow.txt files
+-- fixing internal naming inside robot model (base_link_*_wheel_joint instead of base_*_wheel_joint)
+-- adding <hardwareInterface> element to <joint> element inside robot model
+-- adding default parameters for DiffDrive
+-- exposing (x,y,z,R,P,Y) parameters (starting position and orientation of p3dx rover) in gazebo.launch
+
+References:
+http://answers.ros.org/question/186681/no-valid-hardware-interface-element-found-in-joint/
+http://answers.ros.org/question/40627/how-do-i-set-the-inital-pose-of-a-robot-in-gazebo/
+http://gazebosim.org/tutorials/?tut=ros_roslaunch
 
 Contact
 =======
