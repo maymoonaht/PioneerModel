@@ -1,14 +1,17 @@
 <?xml version="1.0"?>
 <package>
-  <name>p3dx_control</name>
+  <name>p3dx_control_mod</name>
   <version>0.0.1</version>
   <description>
-    The p3dx_control package. This is in experimental mode.
+    The p3dx_control_mod package. This is in experimental mode.
   </description>
   
-  <maintainer email="rafael.berkvens@uantwerpen.be">Rafael Berkvens</maintainer>
+  <!-- <maintainer email="rafael.berkvens@uantwerpen.be">Rafael Berkvens</maintainer>
   <license>GPLv3</license>
-  <url>https://github.com/RafBerkvens/ua_ros_p3dx</url>
+  <url>https://github.com/RafBerkvens/ua_ros_p3dx</url> -->
+  <maintainer email="cmcghan@cms.caltech.edu">Catharine McGhan</maintainer>
+  <license>GPLv3</license>
+  <url>https://github.com/cmcghan/PioneerModel</url>
   
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>controller_manager</build_depend>
