@@ -41,7 +41,7 @@ work original in ucs-ros-pkg.
 			<visual name="base_visual">
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry name="pioneer_geom">
-					<mesh filename="package://p3dx_description/meshes/${suffix}_wheel.stl" />
+					<mesh filename="package://p3dx_description_mod/meshes/${suffix}_wheel.stl" />
 				</geometry>
 				<material name="WheelBlack">
 					<color rgba="0.117 0.117 0.117 1" />
@@ -51,7 +51,7 @@ work original in ucs-ros-pkg.
 			<collision>
 				<origin xyz="0 0 0" rpy="${-3.1415927/2} 0 0" />
 				<geometry>
-					<!--<mesh filename="package://p3dx_description/meshes/${suffix}_wheel.stl"/> -->
+					<!--<mesh filename="package://p3dx_description_mod/meshes/${suffix}_wheel.stl"/> -->
 					<cylinder radius="0.09" length="0.01" />
 				</geometry>
 			</collision>
@@ -75,7 +75,7 @@ work original in ucs-ros-pkg.
 			<visual name="base_visual">
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry name="pioneer_geom">
-					<mesh filename="package://p3dx_description/meshes/${suffix}_hubcap.stl" />
+					<mesh filename="package://p3dx_description_mod/meshes/${suffix}_hubcap.stl" />
 				</geometry>
 
 				<material name="HubcapYellow">
@@ -91,7 +91,8 @@ work original in ucs-ros-pkg.
 			</collision>
 		</link>
 
-		<joint name="base_${suffix}_wheel_joint" type="continuous">
+		<!-- <joint name="base_${suffix}_wheel_joint" type="continuous"> -->
+        <joint name="base_link_${suffix}_wheel_joint" type="continuous">
 			<axis xyz="0 1 0" />
 			<anchor xyz="0 0 0" />
 			<limit effort="100" velocity="100" />
@@ -105,8 +106,12 @@ work original in ucs-ros-pkg.
 
     <transmission name="${parent}_${suffix}_wheel_trans">
       <type>pr2_mechanism_model/SimpleTransmission</type>
-      <joint name="base_${suffix}_wheel_joint" />
-      <actuator name="base_${suffix}_wheel_motor">
+      <!-- <joint name="base_${suffix}_wheel_joint" /> -->
+      <joint name="base_link_${suffix}_wheel_joint"> <!-- joint now requires hardwareInterface element -->
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+      </joint>
+      <!-- <actuator name="base_${suffix}_wheel_motor"> -->
+      <actuator name="base_link_${suffix}_wheel_motor">
         <hardwareInterface>EffortJointInterface</hardwareInterface>
         <mechanicalReduction>${reflect * 624/35 * 80/19}</mechanicalReduction>
       </actuator>
