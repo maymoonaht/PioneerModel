@@ -7,11 +7,32 @@ that itself was a slightly adjusted pioneer model that was obtained from https:/
 Quick Description
 -----------------
 
-From prior README.md file:
+From prior README.md file: A ROS/Gazebo Pioneer 3DX model.
 
-A ROS/Gazebo Pioneer 3DX model.
+Install dependencies: PioneerModel/p3dx_control requires controller_manager to compile
 
-To install:
+For ROS indigo:
+```
+$ cd <catkin_ws>/src
+$ sudo apt-get install ros-indigo-controller-manager-tests ros-indigo-ros-controllers
+$ sudo apt-get install ros-indigo-gazebo-ros-control
+```
+
+For ROS jade:
+```
+$ sudo apt-get install ros-jade-controller-manager-tests ros-jade-ros-controllers
+$ sudo apt-get install ros-jade-gazebo-ros-pkgs # Ubuntu 14.04 repository does not include ros-jade-gazebo-ros-control yet...
+$ cd <catkin_ws>/src
+$ git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git # includes gazebo_ros_control...
+$ sudo apt-get install ros-jade-ros-control # for gazebo_ros_control, need transmission_interface
+```
+
+Optional installation:
+```
+$ git clone https://github.com/SD-Robot-Vision/p3dx_mover.git
+```
+
+To install this github repository:
 ```
 $ cd <catkin_ws>/src/rss-rse/extern
 $ git clone https://github.com/cmcghan/PioneerModel.git
