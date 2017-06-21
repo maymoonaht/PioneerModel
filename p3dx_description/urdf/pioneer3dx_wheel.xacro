@@ -108,7 +108,8 @@ work original in ucs-ros-pkg.
       <type>pr2_mechanism_model/SimpleTransmission</type>
       <!-- <joint name="base_${suffix}_wheel_joint" /> -->
       <joint name="base_link_${suffix}_wheel_joint"> <!-- joint now requires hardwareInterface element -->
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <!-- <hardwareInterface>EffortJointInterface</hardwareInterface> -->
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <!-- <actuator name="base_${suffix}_wheel_motor"> -->
       <actuator name="base_link_${suffix}_wheel_motor">

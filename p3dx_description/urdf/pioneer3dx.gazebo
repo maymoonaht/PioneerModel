@@ -67,12 +67,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <!-- differential drive -->
 	<gazebo>
 		<plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-			<alwaysOn>true</alwaysOn>
-			<updateRate>100</updateRate>
-			<!-- <leftJoint>base_right_wheel_joint</leftJoint>
-			<rightJoint>base_left_wheel_joint</rightJoint> -->
-			<leftJoint>base_link_right_wheel_joint</leftJoint>
-			<rightJoint>base_link_left_wheel_joint</rightJoint>
+			<!-- from 2017-06-20 run:
+            [ERROR] [1497990805.840864798, 0.001000000]: GazeboRosDiffDrive Plugin missing <legacyMode>, defaults to true
+              This setting assumes you have a old package, where the right and left wheel are changed to fix a former code issue
+              To get rid of this error just set <legacyMode> to false if you just created a new package.
+              To fix an old package you have to exchange left wheel by the right wheel.
+              If you do not want to fix this issue in an old package or your z axis points down instead of the ROS standard defined in REP 103
+              just set <legacyMode> to true.
+            -->
+            <legacyMode>false</legacyMode> <!-- to align with their fix, swapped the wheels back, see below! :) -->
+            <alwaysOn>true</alwaysOn>
+            <updateRate>100</updateRate>
+            <!-- <leftJoint>base_right_wheel_joint</leftJoint>
+            <rightJoint>base_left_wheel_joint</rightJoint> -->
+            <!-- <leftJoint>base_link_right_wheel_joint</leftJoint> - for legacyMode=true -->
+            <!-- <rightJoint>base_link_left_wheel_joint</rightJoint> - for legacyMode=true -->
+			<leftJoint>base_link_left_wheel_joint</leftJoint> <!-- corresponds to fix! -->
+			<rightJoint>base_link_right_wheel_joint</rightJoint> <!-- corresponds to fix! -->
 			<wheelSeparation>0.39</wheelSeparation>
 			<wheelDiameter>0.15</wheelDiameter>
 			<torque>5</torque>
