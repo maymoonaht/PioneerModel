@@ -18,10 +18,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 
-<robot>
+<!-- <robot> -->
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- properties (constants) -->
-  <property name="ns" value="p3dx" />
+  <!-- <property name="ns" value="p3dx" /> -->
+  <xacro:property name="ns" value="p3dx" />
 
   <!-- ros_control plugin -->
   <gazebo>
@@ -66,6 +68,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   <!-- differential drive -->
 	<gazebo>
+        <!-- DiffDrive:
+        http://docs.ros.org/kinetic/api/gazebo_plugins/html/gazebo__ros__diff__drive_8cpp_source.html
+        http://wiki.ros.org/diff_drive_controller-->
 		<plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
 			<!-- from 2017-06-20 run:
             [ERROR] [1497990805.840864798, 0.001000000]: GazeboRosDiffDrive Plugin missing <legacyMode>, defaults to true
@@ -75,7 +80,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
               If you do not want to fix this issue in an old package or your z axis points down instead of the ROS standard defined in REP 103
               just set <legacyMode> to true.
             -->
-            <legacyMode>false</legacyMode> <!-- to align with their fix, swapped the wheels back, see below! :) -->
+            <legacyMode>false</legacyMode> <!-- works with newer version of the plugin, ROS kinetic; to align with their fix, swapped the wheels back, see below! :) -->
             <alwaysOn>true</alwaysOn>
             <updateRate>100</updateRate>
             <!-- <leftJoint>base_right_wheel_joint</leftJoint>
@@ -86,7 +91,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			<rightJoint>base_link_right_wheel_joint</rightJoint> <!-- corresponds to fix! -->
 			<wheelSeparation>0.39</wheelSeparation>
 			<wheelDiameter>0.15</wheelDiameter>
-			<torque>5</torque>
+			<!-- <torque>5</torque> old. new is wheelTorque below-->
 			<commandTopic>cmd_vel</commandTopic>
 			<odometryTopic>odom</odometryTopic>
 			<odometryFrame>odom</odometryFrame>
@@ -98,7 +103,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <publishWheelJointState>false</publishWheelJointState>
             <wheelAcceleration>0</wheelAcceleration>
             <wheelTorque>5</wheelTorque>
-            <!-- <odometrySource>1</odometrySource> -->
+            <odometrySource>world</odometrySource> <!-- added default = 1 (WORLD?, not = 0 ENCODER??) -->
             <publishTf>1</publishTf>
             <!-- /end setting defaults for DiffDrive in gazebo -->
 		</plugin>

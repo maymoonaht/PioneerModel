@@ -27,8 +27,17 @@
 	</include>
 
 	<!-- Load the URDF into the ROS Parameter Server -->
-	<param name="robot_description"
-		command="$(find xacro)/xacro.py '$(find p3dx_description_mod)/urdf/pioneer3dx.xacro'" />
+	<!-- <param name="robot_description"
+		command="$(find xacro)/xacro.py '$(find p3dx_description_mod)/urdf/pioneer3dx.xacro'" /> -->
+	<!-- xacro: Traditional processing is deprecated. Switch to inorder processing!
+    To check for compatibility of your document, use option check-order.
+    For more infos, see http://wiki.ros.org/xacro#Processing_Order
+    deprecated: xacro tags should be prepended with 'xacro' xml namespace.
+    Use the following script to fix incorrect usage:
+            find . -iname "*.xacro" | xargs sed -i 's#<\([/]\?\)\(if\|unless\|include\|arg\|property\|macro\|insert_block\)#<\1xacro:\2#g'
+    -->
+    <param name="robot_description"
+		command="$(find xacro)/xacro -i '$(find p3dx_description_mod)/urdf/pioneer3dx.xacro'" /> <!-- for new inorder processing -->
 
 	<!-- Run a python script to the send a service call to gazebo_ros to spawn 
 		a URDF robot -->

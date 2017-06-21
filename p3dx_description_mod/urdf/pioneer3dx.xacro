@@ -21,13 +21,20 @@ This project is based on work by Tracy Davies, where it was in turn based on
 work original in ucs-ros-pkg.
  -->
 
+<!-- ...if needed, for completeness and file-checking...
+create xml file from xacro file(s) via:
+$ rosrun xacro xacro pioneer3dx.xacro > pioneer3dx.xml
+create inorder processing version via:
+$ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
+-->
+
 <robot name="pioneer3dx" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- import all gazebo-customization elements, including gazebo colors -->
   <xacro:include filename="$(find p3dx_description_mod)/urdf/pioneer3dx.gazebo" />
   <!-- import the pioneer 3dx's wheels -->
   <xacro:include filename="$(find p3dx_description_mod)/urdf/pioneer3dx_wheel.xacro" />
-
+  
   <!-- chassis -->
 	<link name="base_link">
 		<inertial>
@@ -37,7 +44,8 @@ work original in ucs-ros-pkg.
 			<inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
 		</inertial>
 
-		<visual name="base_visual">
+		<!-- <visual name="base_visual"> name tag throws off parser in Gazebo 5+ when dealing with colors, removing... -->
+        <visual>
 			<origin xyz="-0.045 0 0.148" rpy="0 0 0" />
 			<geometry name="pioneer_geom">
 				<mesh filename="package://p3dx_description_mod/meshes/chassis.stl" />
@@ -63,7 +71,8 @@ work original in ucs-ros-pkg.
 			<inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
 		</inertial>
 
-		<visual name="base_visual">
+		<!-- <visual name="base_visual"> name tag throws off parser in Gazebo 5+ when dealing with colors, removing... -->
+        <visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry name="top_geom">
 				<mesh filename="package://p3dx_description_mod/meshes/top.stl" />
@@ -96,7 +105,8 @@ work original in ucs-ros-pkg.
 			<inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01" />
 		</inertial>
 
-		<visual name="base_visual">
+		<!-- <visual name="base_visual"> name tag throws off parser in Gazebo 5+ when dealing with colors, removing... -->
+        <visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry name="pioneer_geom">
 				<mesh filename="package://p3dx_description_mod/meshes/swivel.stl" />
@@ -133,7 +143,8 @@ work original in ucs-ros-pkg.
 				iyy="0.015218160428" iyz="-0.000004273467" izz="0.011763977943" />
 		</inertial>
 
-		<visual name="base_visual">
+		<!-- <visual name="base_visual"> name tag throws off parser in Gazebo 5+ when dealing with colors, removing... -->
+        <visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry name="pioneer_geom">
 				<mesh filename="package://p3dx_description_mod/meshes/center_hubcap.stl" />
@@ -170,7 +181,8 @@ work original in ucs-ros-pkg.
 				iyy="0.015218160428" iyz="-0.000004273467" izz="0.011763977943" />
 		</inertial>
 
-		<visual name="base_visual">
+		<!-- <visual name="base_visual"> name tag throws off parser in Gazebo 5+ when dealing with colors, removing... -->
+        <visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry name="pioneer_geom">
 				<mesh filename="package://p3dx_description_mod/meshes/center_wheel.stl" />
@@ -205,7 +217,8 @@ work original in ucs-ros-pkg.
 			<inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
 		</inertial>
 		
-		<visual name="front_sonar_vis">
+		<!-- <visual name="front_sonar_vis"> name tag throws off parser in Gazebo 5+ when dealing with colors, removing... -->
+        <visual>
 			<origin rpy="0 0 0" xyz="0 0 0" />
 			<geometry name="pioneer_geom">
 				<mesh filename="package://p3dx_description_mod/meshes/front_sonar.stl" />
