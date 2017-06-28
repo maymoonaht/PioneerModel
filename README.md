@@ -4,6 +4,8 @@ Pioneer_Model
 Slightly further adjusted Pioneer 3-DX model forked from https://github.com/SD-Robot-Vision/PioneerModel
 that itself was a slightly adjusted pioneer model that was obtained from https://github.com/RafBerkvens/ua_ros_p3dx
 
+(Forked from [https://github.com/cmcghan/PioneerModel](cmcghan/PioneerModel). AS4SR/PioneerModel is the most up-to-date fork in this series.)
+
 Quick Description
 -----------------
 
@@ -50,7 +52,7 @@ To download and compile this github repository (assuming you've already installe
 ```
 $ mkdir -p <catkin_ws>/src
 $ cd <catkin_ws>/src
-$ git clone https://github.com/cmcghan/PioneerModel.git
+$ git clone https://github.com/AS4SR/PioneerModel.git
 $ cd ..
 $ catkin_make
 ```
@@ -59,7 +61,7 @@ $ catkin_make
 ```
 $ mkdkir -p <catkin_ws>/src/rss-rse/extern
 $ cd <catkin_ws>/src/rss-rse/extern
-$ git clone https://github.com/cmcghan/PioneerModel.git
+$ git clone https://github.com/AS4SR/PioneerModel.git
 $ cd ../../..
 $ catkin_make
 ```
@@ -106,14 +108,16 @@ License
 
 Original license is GPLv3, see LICENSE file in the repository.
 
-Modifications are Copyright (c) 2016, by California Institute of Technology, also under GPLv3,
+Modifications from SD-Robot-Vision/PioneerModel fork are Copyright (c) 2016, by California Institute of Technology, also under GPLv3,
 and Copyright (c) 2017 by University of Cincinnati, also under GPLv3.
 
 Modifications were performed by Catharine McGhan.
 
 Modifications include:
-- updating README.md file
+- updates to README.md file
 - changing the package names in all subdirectories to *_mod (for compatibility in case original branch is downloaded)
+- changes to directory names to make them match the package names in CMakeLists.txt and package.xml
+- updates to maintainer email addresses in package.xml files
 - removing .project and meow.txt files
 - fixing internal naming inside robot model (base_link_*_wheel_joint instead of base_*_wheel_joint)
 - adding <hardwareInterface> element to <joint> element inside robot model
@@ -122,19 +126,16 @@ Modifications include:
 - fixing a typo in the urdf_spawner call in the gazebo.launch file (" was in the wrong place)
 - fixes to other internals to remove error messages (legacyMode and leftJoint rightJoint in gazebo.launch; odometrySource)
 - updates to support and use the newer `xacro -i` (with "inorder" processing mode) instead of deprecated `xacro.py`
-- material-color-fix (removal of 'name=' property from all 'visual' tags)
-- changes to directory names to make them match the package names in CMakeLists.txt and package.xml
-- updates to README.md
-- updates to maintainer email addresses in package.xml files
+- fix to material-color in model files (removal of 'name=' property from all 'visual' tags)
 
 References:  
-http://answers.ros.org/question/186681/no-valid-hardware-interface-element-found-in-joint/  
-http://answers.ros.org/question/40627/how-do-i-set-the-inital-pose-of-a-robot-in-gazebo/  
-http://gazebosim.org/tutorials/?tut=ros_roslaunch
-http://docs.ros.org/kinetic/api/gazebo_plugins/html/gazebo__ros__diff__drive_8cpp_source.html
-http://wiki.ros.org/diff_drive_controller
-http://wiki.ros.org/xacro#Processing_Order
-https://bitbucket.org/osrf/sdformat/issues/132/parser-does-not-handle-urdf-material
+- http://answers.ros.org/question/186681/no-valid-hardware-interface-element-found-in-joint/  
+- http://answers.ros.org/question/40627/how-do-i-set-the-inital-pose-of-a-robot-in-gazebo/  
+- http://gazebosim.org/tutorials/?tut=ros_roslaunch
+- http://docs.ros.org/kinetic/api/gazebo_plugins/html/gazebo__ros__diff__drive_8cpp_source.html
+- http://wiki.ros.org/diff_drive_controller
+- http://wiki.ros.org/xacro#Processing_Order
+- https://bitbucket.org/osrf/sdformat/issues/132/parser-does-not-handle-urdf-material
 
 Contact
 =======
