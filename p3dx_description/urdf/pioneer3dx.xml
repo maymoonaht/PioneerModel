@@ -171,7 +171,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="-0.045 0 0.148"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/chassis.stl"/>
+        <mesh filename="package://p3dx_description/meshes/chassis.stl"/>
       </geometry>
       <material name="ChassisRed">
         <color rgba="0.851 0.0 0.0 1.0"/>
@@ -195,7 +195,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="top_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/top.stl"/>
+        <mesh filename="package://p3dx_description/meshes/top.stl"/>
       </geometry>
       <material name="TopBlack">
         <color rgba="0.038 0.038 0.038 1.0"/>
@@ -224,7 +224,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/swivel.stl"/>
+        <mesh filename="package://p3dx_description/meshes/swivel.stl"/>
       </geometry>
       <material name="swivel">
         <color rgba="0.5 0.5 0.5 1"/>
@@ -257,7 +257,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/center_hubcap.stl"/>
+        <mesh filename="package://p3dx_description/meshes/center_hubcap.stl"/>
       </geometry>
       <material name="swivel">
         <color rgba="0.5 0.5 0.5 1"/>
@@ -290,7 +290,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/center_wheel.stl"/>
+        <mesh filename="package://p3dx_description/meshes/center_wheel.stl"/>
       </geometry>
       <material name="WheelBlack">
         <color rgba="0.117 0.117 0.117 1"/>
@@ -319,7 +319,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/left_wheel.stl"/>
+        <mesh filename="package://p3dx_description/meshes/left_wheel.stl"/>
       </geometry>
       <material name="WheelBlack">
         <color rgba="0.117 0.117 0.117 1"/>
@@ -328,7 +328,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <collision>
       <origin rpy="-1.57079635 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--<mesh filename="package://p3dx_description_mod/meshes/${suffix}_wheel.stl"/> -->
+        <!--<mesh filename="package://p3dx_description/meshes/${suffix}_wheel.stl"/> -->
         <cylinder length="0.01" radius="0.09"/>
       </geometry>
     </collision>
@@ -349,7 +349,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/left_hubcap.stl"/>
+        <mesh filename="package://p3dx_description/meshes/left_hubcap.stl"/>
       </geometry>
       <material name="HubcapYellow">
         <color rgba="1.0 0.811 0.151 1.0"/>
@@ -408,7 +408,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/right_wheel.stl"/>
+        <mesh filename="package://p3dx_description/meshes/right_wheel.stl"/>
       </geometry>
       <material name="WheelBlack">
         <color rgba="0.117 0.117 0.117 1"/>
@@ -417,7 +417,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <collision>
       <origin rpy="-1.57079635 0 0" xyz="0 0 0"/>
       <geometry>
-        <!--<mesh filename="package://p3dx_description_mod/meshes/${suffix}_wheel.stl"/> -->
+        <!--<mesh filename="package://p3dx_description/meshes/${suffix}_wheel.stl"/> -->
         <cylinder length="0.01" radius="0.09"/>
       </geometry>
     </collision>
@@ -438,7 +438,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/right_hubcap.stl"/>
+        <mesh filename="package://p3dx_description/meshes/right_hubcap.stl"/>
       </geometry>
       <material name="HubcapYellow">
         <color rgba="1.0 0.811 0.151 1.0"/>
@@ -497,7 +497,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry name="pioneer_geom">
-        <mesh filename="package://p3dx_description_mod/meshes/front_sonar.stl"/>
+        <mesh filename="package://p3dx_description/meshes/front_sonar.stl"/>
       </geometry>
       <material name="SonarYellow">
         <color rgba="0.715 0.583 0.210 1.0"/>
@@ -525,7 +525,7 @@ $ rosrun xacro xacro -i pioneer3dx.xacro > pioneer3dx.xml
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://p3dx_description_mod/meshes/lms100.dae"/>
+        <mesh filename="package://p3dx_description/meshes/lms100.dae"/>
       </geometry>
     </visual>
     <collision>
