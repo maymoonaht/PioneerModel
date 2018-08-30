@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package>
-  <name>p3dx_control_mod</name>
-  <version>0.0.1</version>
+  <name>p3dx_description</name>
+  <version>0.1.0</version>
   <description>
-    The p3dx_control_mod package. This is in experimental mode.
+    A Pioneer 3DX description for Gazebo. First working version
   </description>
   
   <!-- <maintainer email="rafael.berkvens@uantwerpen.be">Rafael Berkvens</maintainer>
@@ -12,8 +12,12 @@
   <maintainer email="cat.mcghan@uc.edu">Catharine McGhan</maintainer>
   <license>GPLv3</license>
   <url>https://github.com/cmcghan/PioneerModel</url>
-  
+
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>controller_manager</build_depend>
-  <run_depend>controller_manager</run_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>urdf</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>urdf</run_depend>
 </package>

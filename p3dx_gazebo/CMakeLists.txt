@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(p3dx_gazebo_mod)
+project(p3dx_gazebo)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
-  p3dx_control_mod
-  p3dx_description_mod
+  p3dx_control
+  p3dx_description
 )
 
 ## System dependencies are found with CMake's conventions

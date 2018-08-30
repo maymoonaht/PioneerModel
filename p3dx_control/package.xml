@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package>
-  <name>p3dx_gazebo_mod</name>
-  <version>0.1.0</version>
+  <name>p3dx_control</name>
+  <version>0.0.1</version>
   <description>
-    The p3dx_gazebo_mod package. This is a first working version.
+    The p3dx_control package. This is in experimental mode.
   </description>
   
   <!-- <maintainer email="rafael.berkvens@uantwerpen.be">Rafael Berkvens</maintainer>
@@ -14,10 +14,6 @@
   <url>https://github.com/cmcghan/PioneerModel</url>
   
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>gazebo_ros</build_depend>
-  <build_depend>p3dx_control_mod</build_depend>
-  <build_depend>p3dx_description_mod</build_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>p3dx_control_mod</run_depend>
-  <run_depend>p3dx_description_mod</run_depend>
+  <build_depend>controller_manager</build_depend>
+  <run_depend>controller_manager</run_depend>
 </package>
